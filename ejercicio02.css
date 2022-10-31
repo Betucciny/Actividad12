@@ -5,6 +5,11 @@ body {
     font-family: "Lucida Sans", Verdana, Arial, sans-serif;
     font-size: 80%;
 }
+
+div{
+    max-width: 1500px;
+}
+
 div#search
 {
     margin: 0.25em auto;
@@ -45,8 +50,12 @@ table {
     
 }
 
-table td{
+table tr{
     border-top: 1pt solid #95BEF0;
+}
+
+table td{
+
     line-height: 1.5em;
     vertical-align: middle;
     padding: 0.5em 0.75em;
@@ -99,6 +108,7 @@ table tbody td:first-child  {
 }
 
 #modal-view{
+    max-width: 100%;
     position: absolute;
     width: 100vw;
     height: 100vh;
