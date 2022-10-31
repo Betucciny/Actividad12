@@ -14,6 +14,8 @@ function aplicarCambios(event, contenedor){
 }
 
 
+
+
 function editarDatos(event){
     document.body.classList.add('no-scroll')
     modalview.classList.remove("ocultar")
