@@ -74,7 +74,7 @@ function crearMiniatura(event){
     image.src =  event.currentTarget.src
     bloque.appendChild(image)
 
-    let x= event.clientX;
+    let x = event.clientX;
     let y = event.clientY;
 
     bloque.style.left = String(x)+ "px";
