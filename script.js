@@ -1,4 +1,4 @@
-function aplicarCambios(contenedor){
+function aplicarCambios(event, contenedor){
 
     const data = document.querySelectorAll('#modal-view div textarea');
     const espacios = contenedor.querySelectorAll("td");
@@ -7,11 +7,10 @@ function aplicarCambios(contenedor){
     espacios[2].innerHTML= "<em>" + data[0].value + "</em>";
     for(let i = 3; i<espacios.length-1; i++){
         espacios[i].textContent = data[i-2].value;
-        console.log(espacios[i].textContent);
     }
     document.querySelector("#modal-view").classList.add('ocultar');
 
-    document.querySelector('#modal-view div button').removeEventListener('click',(event) => { aplicarCambios(contenedor);} );
+    event.currentTarget.removeEventListener('click',window.myListener);
 }
 
 
@@ -36,10 +35,14 @@ function editarDatos(event){
         textAreas[i].value = texto[i];
     }
 
+    window.myListener = function (event){
+        aplicarCambios(event, contenedor)
+    }
+
     const image = document.querySelector("#modal-view div img");
     image.src = original.src;
     const button = document.querySelector('#modal-view div button');
-    button.addEventListener('click',(event) => { aplicarCambios(contenedor); })
+    button.addEventListener('click',window.myListener)
 
 }
 
